@@ -17,7 +17,7 @@ function Header() {
     <div data-testid="header-component">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 
-        <a className="navbar-brand" href="/">IPO Tracker & Currency Pulse</a>
+        <a className="navbar-brand" href="/">IPO Tracker & Currency Rate</a>
 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,16 +33,10 @@ function Header() {
             {isAuthenticated ? (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/calender">IPO calender</Link>
-                </li>
-                <li className="nav-item">
                   <Link className="nav-link" to="/exchange">Exchange Rates</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/aboutus">About Us</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/ContactUs">Contact Us</Link>
+                  <Link className="nav-link" to="/calender">IPO calender</Link>
                 </li>
                 <li className="nav-item">
                   <button className="nav-link btn btn-link" onClick={handleLogout}>Logout</button>
@@ -52,12 +46,6 @@ function Header() {
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/register">Register </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/aboutus">About Us</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/ContactUs">Contact Us</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/login">Login </Link>

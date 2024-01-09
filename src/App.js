@@ -1,14 +1,15 @@
+// imports
+
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './allComponents/Header';
-import Home from './allComponents/Home';
-import Login from './allComponents/Login';
-import ContactUs from './allComponents/ContactUs';
-import AboutUs from './allComponents/AboutUs';
-import Register from './allComponents/Register';
 import { AuthProvider } from './allComponents/AuthContext';
 import IpoCalender from './allComponents/IpoCalender';
 import ExchangeRate from './allComponents/ExchangeRate';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './allComponents/Header';
+import Home from './allComponents/Home';
+import Register from './allComponents/Register';
+import Login from './allComponents/Login';
+
 import './App.css';
 
 function App() {
@@ -17,14 +18,13 @@ function App() {
       <BrowserRouter >
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/register" element={<Register />} />
+          {/* navigation */}
           <Route path="/exchange" element={<ExchangeRate />} />
           <Route path="/calender" element={<IpoCalender />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
