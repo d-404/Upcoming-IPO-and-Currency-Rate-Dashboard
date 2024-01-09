@@ -19,8 +19,8 @@ Welcome to the IPO & Currency Dashboard!. This application provides real-time da
 
 ### Currency Exchange Rates
 
-- **Real-Time Currency Exchange Rates:** Utilize the app to check latest currency exchange rates.
+- **Currency Exchange Rates:** Check latest currency exchange rates.
 
 ### Upcoming IPO
 
-- **Explore Upcoming IPOs:** Access the application to view the upcoming IPOs.
+- **Upcoming IPOs:** View the upcoming IPOs.
