@@ -9,7 +9,3 @@ test('renders Home component for default path', () => {
   const homeElement = screen.getByTestId('home-component');
   expect(homeElement).toBeInTheDocument();
 });
-
-
-
-

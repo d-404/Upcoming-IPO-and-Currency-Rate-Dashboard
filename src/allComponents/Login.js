@@ -4,30 +4,34 @@ import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const { login } = useAuth();
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('123');
+  const [username, setUsername] = useState('user');
+  const [password, setPassword] = useState('user');
   const navigate = useNavigate();
 
   const handleLogin = () => {
     if (username && password) {
       login();
-      navigate('/calender', { state: { username } });
+      navigate('/calendar', { state: { username } });
     } else {
-      alert('Please enter your username and password.');
+      alert('Enter your username and password.');
     }
   };
 
   return (
     <section className="vh-100">
+      <br></br><br></br>
       <div className="container-fluid h-custom">
         <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-md-9 col-lg-6 col-xl-5">
-            <div className='reg img-fluid'></div>
-          </div>
-          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <div className="col-md-6 col-lg-5 col-xl-4 offset-xl-1 shadow-lg p-4 mb-5 bg-white rounded">
             <form>
-     
+              <div className="mb-4 text-center">
+                <h2 className="display-4">Login</h2>
+              </div>
+
               <div className="form-outline mb-4">
+                <label className="form-label" htmlFor="username">
+                  Username
+                </label>
                 <input
                   type="text"
                   id="username"
@@ -36,12 +40,12 @@ function Login() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
-                <label className="form-label" htmlFor="form3Example3">
-                  Username
-                </label>
               </div>
 
-              <div className="form-outline mb-3">
+              <div className="form-outline mb-4">
+                <label className="form-label" htmlFor="password">
+                  Password
+                </label>
                 <input
                   type="password"
                   id="password"
@@ -50,20 +54,12 @@ function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <label className="form-label" htmlFor="form3Example4">
-                  Password
-                </label>
               </div>
 
-              <div className="text-center text-lg-start mt-4 pt-2">
+              <div className="text-center mt-4">
                 <button
                   type="button"
-                  id="login-button"
-                  className="btn btn-primary btn-lg"
-                  style={{
-                    paddingLeft: '2.5rem',
-                    paddingRight: '2.5rem',
-                  }}
+                  className="btn btn-success btn-lg"
                   onClick={handleLogin}
                 >
                   Login

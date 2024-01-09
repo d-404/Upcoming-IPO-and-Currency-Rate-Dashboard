@@ -22,24 +22,24 @@ const ExchangeRate = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="text-center mb-4" style={{ backgroundColor: '#1890ff', padding: '10px', color: 'white' }}>
+      <h2 className="text-center mb-4" style={{ backgroundColor: '#9498db', padding: '15px', color: 'white', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
         Latest Currency Exchange Rates
       </h2>
       <div className="table-responsive">
-        <table className="table table-striped table-bordered">
-          <thead>
+        <table className="table table-bordered table-hover shadow">
+          <thead className="thead-light">
             <tr>
-              <th>Serial Number</th>
-              <th>Currency Pair</th>
-              <th>Rate</th>
+              <th className="text-center">Serial</th>
+              <th className="text-center">Currency Pair</th>
+              <th className="text-center">Rate</th>
             </tr>
           </thead>
           <tbody>
-            {exchangeData.map(({ symbol, rate, timestamp, isDerived }, index) => (
+            {exchangeData.map(({ symbol, rate }, index) => (
               <tr key={symbol}>
-                <td>{index + 1}</td>
+                <td className="text-center">{index + 1}</td>
                 <td>{symbol}</td>
-                <td>{rate}</td>
+                <td className="text-center">{rate}</td>
               </tr>
             ))}
           </tbody>

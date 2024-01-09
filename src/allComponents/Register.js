@@ -1,7 +1,7 @@
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React, { useState } from 'react';
-import { Form, Button, FormGroup, FormLabel, FormControl, FormCheck, Col, Container, Row } from 'react-bootstrap';
+import { Form, Button, FormGroup, FormLabel, FormControl, Col, Container, Row } from 'react-bootstrap';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -27,14 +27,12 @@ const Register = () => {
     });
   };
 
-
   return (
     <div>
-      <Container style={{ marginTop: '20px' }}>
+      <Container className="mt-5">
         <Row className="justify-content-center">
-          <Col md={6} order-md={2}>
-            <div style={{ padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
-
+          <Col md={6}>
+            <div className="form-container">
               <Form onSubmit={handleSubmit}>
                 <FormGroup controlId="user">
                   <FormLabel>User ID</FormLabel>
@@ -44,10 +42,9 @@ const Register = () => {
                     required
                     value={formData.user}
                     onChange={handleInputChange}
-                    style={{ marginBottom: '10px' }}
                   />
                 </FormGroup>
-
+                <br></br>
                 <FormGroup controlId="email">
                   <FormLabel>Email ID</FormLabel>
                   <FormControl
@@ -56,10 +53,9 @@ const Register = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    style={{ marginBottom: '10px' }}
                   />
                 </FormGroup>
-
+                <br></br>
                 <FormGroup controlId="password">
                   <FormLabel>Password</FormLabel>
                   <FormControl
@@ -68,11 +64,10 @@ const Register = () => {
                     required
                     value={formData.password}
                     onChange={handleInputChange}
-                    style={{ marginBottom: '10px' }}
                   />
                 </FormGroup>
 
-                <div style={{ textAlign: 'center' }}>
+                <div className="text-center mt-3">
                   <Button type="submit" variant="success">
                     Register
                   </Button>

@@ -11,10 +11,9 @@ const IPOCalendar = () => {
     const fetchIPOData = async () => {
       try {
         const response = await axios.get(apiUrl);
-        //Since price is null in api , setting a random price
         const modifiedData = response.data.map((ipo) => ({
           ...ipo,
-          price: Math.floor(Math.random() * 1000) + 1000, 
+          price: Math.floor(Math.random() * 1000) + 1000,
         }));
         setIPOData(modifiedData);
       } catch (error) {
@@ -27,32 +26,34 @@ const IPOCalendar = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="text-center mb-4" style={{ backgroundColor: '#1890ff', padding: '10px', color: 'white' }}>
-        Upcoming IPO Calendar
-      </h2>
-      <div className="table-responsive">
-        <table className="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Sr.</th>
-              <th>Company</th>
-              <th>Date</th>
-              <th>Price</th>
-              <th>Symbol</th>
-            </tr>
-          </thead>
-          <tbody>
-            {ipoData.map((ipo, index) => (
-              <tr key={ipo.id}>
-                <td>{index + 1}</td>
-                <td>{ipo.companyName}</td>
-                <td>{ipo.offeringDate}</td>
-                <td>{ipo.price}</td>
-                <td>{ipo.symbol}</td>
+      <div className="card p-4 shadow rounded">
+        <h2 className="text-center mb-4" style={{ backgroundColor: '#8496db', padding: '15px', color: 'white', borderRadius: '5px' }}>
+          Upcoming IPO Calendar
+        </h2>
+        <div className="table-responsive">
+          <table className="table table-striped table-bordered">
+            <thead style={{ backgroundColor: '#f0f0f0' }}>
+              <tr>
+                <th>Serial</th>
+                <th>Symbol</th>
+                <th>Company</th>
+                <th>Date</th>
+                <th>Price</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {ipoData.map((ipo, index) => (
+                <tr key={ipo.id}>
+                  <td>{index + 1}</td>
+                  <td>{ipo.symbol}</td>
+                  <td>{ipo.companyName}</td>
+                  <td>{ipo.offeringDate}</td>
+                  <td>${ipo.price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
