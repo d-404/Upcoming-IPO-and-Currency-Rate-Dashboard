@@ -1,94 +1,60 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 10px;
-}
-
-.container::after,
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-.button:hover {
-  background-color: #555;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-
-.column {
-  float: left;
-  width: 33%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-html {
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+/* Header Styles */
+.App-header {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
+/* Container Styles */
+.container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Button Styles */
+.button {
+  border: none;
+  outline: none;
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #3498db;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+
+/* Card Styles */
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #ecf0f1;
 }
 
+/* Image Styles */
 .image {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: auto;
 }
 
+/* Background Image Styles */
 .bg-image {
   background-size: cover;
   background-position: center;
@@ -97,21 +63,10 @@ html {
 }
 
 
-@media (max-width: 768px) {
-  .row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .column {
-    width: 100%;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .card {
-    width: 80%;
-  }
+/* Column Styles */
+.column {
+  float: left;
+  width: 33.33%;
+  margin-bottom: 16px;
+  padding: 0 16px;
 }
